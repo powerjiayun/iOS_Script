@@ -13,7 +13,9 @@ ids = $persistentStore.read('01_join_testflight_app_ids')
 if (ids == null || typeof (ids) == 'undefined' || ids == '') {
     // Quantumult X TestFlight  VCIvwk2g
     let quantumultTestId = 'VCIvwk2g'
-    $persistentStore.write(quantumultTestId, '01_join_testflight_app_ids')
+    let chromeTestId = 'LPQmtkUs'
+    let unionIds = quantumultTestId.concat(',').concat(chromeTestId)
+    $persistentStore.write(unionIds, '01_join_testflight_app_ids')
 }
 if ($persistentStore.read('01_join_testflight_request_id') !== null) {
     $notification.post('01_join_testflight', '信息获取成功', '{}')
