@@ -5,8 +5,6 @@ switch ($request.url.match(/map|personal|json/)[0]){
     break;
   case "personal":
     var objk = Body.data;
-    objk["daily_count"] = "88";
-    objk["nick_name"] = "金字塔的顶端";
     break;
   default:
     $done({ body: $response.body.replace(/false/g,'true') });
